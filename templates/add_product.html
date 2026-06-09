@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-4">
+
+    <h2>Add Product</h2>
+
+    <form method="POST">
+
+        <label>Product Name</label>
+        <input type="text" name="name" class="form-control" required>
+        <br>
+
+        <label>Price</label>
+        <input type="number" name="price" class="form-control" required>
+        <br>
+
+        <label>Description</label>
+        <textarea name="description" class="form-control" required></textarea>
+        <br>
+
+        <label>Image File Name</label>
+        <input type="text" name="image" class="form-control" placeholder="laptop.jpg" required>
+        <br>
+
+        <button type="submit" class="btn btn-success">
+            Add Product
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
