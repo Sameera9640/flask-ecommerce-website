@@ -494,6 +494,9 @@ def move_to_cart(product_id):
     db.session.commit()
 
     return redirect("/cart")
+
+import os
+
 if __name__ == "__main__":
 
     with app.app_context():
@@ -502,13 +505,12 @@ if __name__ == "__main__":
 
         if Product.query.count() == 0:
 
-            
             p1 = Product(
-               name="Laptop",
-               price=55000,
-               description="High Performance Laptop",
-               image="laptop.jpg",
-               category="Electronics"
+                name="Laptop",
+                price=55000,
+                description="High Performance Laptop",
+                image="laptop.jpg",
+                category="Electronics"
             )
 
             p2 = Product(
@@ -530,4 +532,5 @@ if __name__ == "__main__":
             db.session.add_all([p1, p2, p3])
             db.session.commit()
 
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
